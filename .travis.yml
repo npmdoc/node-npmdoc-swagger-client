@@ -1,0 +1,31 @@
+before_install:
+    # init xvfb
+    # http://docs.travis-ci.com/user/gui-and-headless-browsers/
+    - "export DISPLAY=:99.0 && sh -e /etc/init.d/xvfb start"
+branches:
+    only:
+    - alpha
+    - beta
+    - docker.base
+    - docker.latest
+    - master
+    - publish
+    - task
+env:
+    global:
+    # this value is auto-created by shTravisCryptoAesEncryptYml
+    - secure: qIbcilkM/QwVNlphYiM7uYXs0KERmnxwKVWZttbLZ5IzclEIxQscpNmnM/33EOFxWbDMiqO+ypvmXWJ1rc5wIxTgnf+jVMijKJ0ao72D0Ijj3nsexAFdJnd4tZXl8+CdAUcfactpZ/mpDfb0q1Czdd3jZmXywPaqSSkqfHLbiBeUkRjn79d/opsGQjl967v1OqD8O/Ih9MfLOi98zz8aMv48hZTIoi9tlY/SHfO8RCFuzIlw0HM5CQbEqZcTfbkRtOknh6o3inSdq6SXbKZsv9y5OKWrGVUsxvk0Q8FJ4A70fvymH51qyUNg27lFHxGtpaxT0dzZ6vUnxS6An66ZcWbSIvEQvMwSHapuyK0EagpKbBDHY+yjmwfkeoJUV+hPc32tp2JxLvlo7ZZQlnE6OsZwDFejcmqdtWdjUNDFssDNzwc3BGuh3/UzAQqKno4hk8y2WYEq3sHYmOCaBx/PW7BilefTz3MWSYgm2E8+tAwzS/uCDv/Y54yzCYWefNcy0JOeUMSDrYA6M9otvpll4M4WMUHPuyQRA1czjUjIyoByBelO4vo5ZZ08Qn9K+fqSiN6eSMb3t4tzy6Z0q4twekW3VzuubHoDLo+DZDMknPUCVERgyz/PBCqpiEuOI43o7GCwlFZqtjf3n/DusQ9YlNvghTbrn+eybZjE4G++fiM= # CRYPTO_AES_KEY
+    # this value is auto-created by shTravisCryptoAesEncryptYml
+    # - CRYPTO_AES_ENCRYPTED_SH: YjZiMmIwNjYyY2E0OGI5YjQ4ZmI3YTdkYmU4NjViN2I=I93wn43H8K4/eB5Wvi6A2irUFGh17rfCMer38OP/nGwK/4CqVaqXLLQlnG0aW/B+Zt+rUVfwxFxQplOTNqrK3WtMKw1307LZjVv/TPshn/uGxPUqpJTI075x+/b73WEYCXFvwCMwE1GVNiZTS8hGRmmhdLsFy7jlqQwGm0sp7VhUDRSmPsSH5rPplwKCvisqfcMBfCiGjfpXmrbX3gAnwDorfdHLKPFJlzUTcxPeEAjhT8pDckamS+V5scyCZwCqQdRFGOGva3KDyjBIOISbKkdhk1Yn8PczsJe7zrT+j2+mbBV32HPOQdmrwfPC/u3uLZSeTa+kob416KrOdHZWzk1p8DitQBgZUDwBd3ZVvxwc1lOrpciCunR3HXuaJIXKEkrzDu0V2uV/0V9vkeKFmFrTTnKad/4HPtB3GEfBkDPWEWOoYglEeIhMv5cBWdYnfFaV5Kkp145NI8IBQovJ07UyMk7uPcUEcY+V4s3RP3JZ2ZkfSOBXSMT5oa6m6DOX+w3ZNMsj4S0DYt/ncKvOOtqNOiXCChFGgwVd3hgfifgpiWF9CyqDL9AUkRgJyE9uFWccdPID8hw9hvHm1CinboH0CQZkX0/RbIy/R0S8nVS22HTX0SOgq6/yhacalRn6pkX1KxWgZc8gmgTlGvX/YcEzB31sQhy//jm69dd+XELcijk+jFmdf9jnW9Lyo366sRXXdnqFE5gDE4ZMOvyDyURDtKyBnaoy4FnMJY0HAfAIY46MN2/9ZKb9FQTigvVV # CRYPTO_AES_ENCRYPTED_SH
+language:
+    - node_js
+node_js:
+    - 6
+    # - node
+script:
+    - npm run build-ci
+services:
+    - docker
+# http://docs.travis-ci.com/user/workers/container-based-infrastructure
+sudo:
+    false

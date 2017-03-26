@@ -3,7 +3,7 @@
 
 [![NPM](https://nodei.co/npm/swagger-client.png?downloads=true)](https://www.npmjs.com/package/swagger-client)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-swagger-client/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-swagger_client_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-swagger-client/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-swagger-client/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-swagger-client_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-swagger-client/build..beta..travis-ci.org/apidoc.html)
 
 ![package-listing](https://npmdoc.github.io/node-npmdoc-swagger-client/build/screen-capture.npmPackageListing.svg)
 

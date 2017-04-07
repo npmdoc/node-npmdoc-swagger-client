@@ -1,11 +1,13 @@
-# api documentation for  swagger-client (v3.0.3)  [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-swagger-client.svg)](https://travis-ci.org/npmdoc/node-npmdoc-swagger-client)
+# api documentation for  swagger-client (v3.0.4)  [![npm package](https://img.shields.io/npm/v/npmdoc-swagger-client.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-swagger-client) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-swagger-client.svg)](https://travis-ci.org/npmdoc/node-npmdoc-swagger-client)
 #### SwaggerJS - a collection of interfaces for OAI specs
 
 [![NPM](https://nodei.co/npm/swagger-client.png?downloads=true)](https://www.npmjs.com/package/swagger-client)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-swagger-client/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-swagger_client_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-swagger-client/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-swagger-client/build/screenCapture.buildNpmdoc.browser.%2Fhome%2Ftravis%2Fbuild%2Fnpmdoc%2Fnode-npmdoc-swagger-client%2Ftmp%2Fbuild%2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-swagger-client/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-swagger-client/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-swagger-client/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-swagger-client/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
@@ -81,10 +83,10 @@
     },
     "directories": {},
     "dist": {
-        "shasum": "ff1362510be5a8978864a91ad6af5bae1fa2a6aa",
-        "tarball": "https://registry.npmjs.org/swagger-client/-/swagger-client-3.0.3.tgz"
+        "shasum": "25a797e207001135d554c1b1164e36b1cb35948c",
+        "tarball": "https://registry.npmjs.org/swagger-client/-/swagger-client-3.0.4.tgz"
     },
-    "gitHead": "bcb69e25b5a90a77239dc37cbae5fbdcdee0c06f",
+    "gitHead": "9f5c66da8054f1e79f80ef1ae3eefc1c2837bee6",
     "keywords": [
         "oai",
         "swagger",
@@ -107,7 +109,8 @@
     },
     "readme": "ERROR: No README data found!",
     "scripts": {
-        "build": "NODE_ENV=production webpack -p --config ./webpack.config.js && NODE_ENV=production webpack -p --config ./webpack.bundle.config.js ",
+        "build": "NODE_ENV=production webpack -p --config ./webpack.config.js",
+        "build-bundle": "NODE_ENV=production webpack -p --config ./webpack.bundle.config.js",
         "deps-check": "npm run deps-license && npm run deps-size",
         "deps-license": "license-checker --production --csv --out $npm_package_config_deps_check_dir/licenses.csv && license-checker --development --csv --out $npm_package_config_deps_check_dir/licenses-dev.csv",
         "deps-size": "webpack -p --config webpack.check.js --json | webpack-bundle-size-analyzer >| $npm_package_config_deps_check_dir/sizes.txt",
@@ -117,7 +120,7 @@
         "test:watch": "npm run test -- -w",
         "watch": "webpack --config webpack.config.js --watch --progress"
     },
-    "version": "3.0.3"
+    "version": "3.0.4"
 }
 ```
 
@@ -134,7 +137,7 @@
 1.  [function <span class="apidocSignatureSpan">swagger-client.</span>makeHttp ()](#apidoc.element.swagger-client.makeHttp)
 1.  [function <span class="apidocSignatureSpan">swagger-client.</span>resolve (e)](#apidoc.element.swagger-client.resolve)
 1.  [function <span class="apidocSignatureSpan">swagger-client.</span>serializeHeaders ()](#apidoc.element.swagger-client.serializeHeaders)
-1.  [function <span class="apidocSignatureSpan">swagger-client.</span>serializeRes (e, t, r)](#apidoc.element.swagger-client.serializeRes)
+1.  [function <span class="apidocSignatureSpan">swagger-client.</span>serializeRes (e, t)](#apidoc.element.swagger-client.serializeRes)
 1.  object <span class="apidocSignatureSpan">swagger-client.</span>parameterBuilders
 
 #### [module swagger-client.parameterBuilders](#apidoc.module.swagger-client.parameterBuilders)
@@ -152,32 +155,32 @@
 - description and source-code
 ```javascript
 function u(e){var t=e.spec,r=e.operationId,n=e.parameters,a=e.securities,u=e.requestContentType,i=e.responseContentType,o=e.parameterBuilders
-,s=e.scheme,c=e.requestInterceptor,l=e.responseInterceptor,d=e.contextUrl;o=o||C;var h={url:f({spec:t,scheme:s,contextUrl:d}),headers
-:{}};if(c&&(h.requestInterceptor=c),l&&(h.responseInterceptor=l),!r)return h;var v=(0,E.getOperationRaw)(t,r),m=v.operation,g=void
- 0===m?{}:m,y=v.method,b=v.pathName;return h.url+=b,h.method=(""+y).toUpperCase(),n=n||{},i&&(h.headers.accept=i),u&&(h.headers["
-content-type"]=u),M(g.parameters).concat(M(t.paths[b].parameters)).forEach(function(e){var r=o[e.in],a=void 0;if("body"===e.in&&
-e.schema&&e.schema.properties&&(a=n),a=e&&e.name&&n[e.name],void 0!==e.default&&void 0===a&&(a=e.default),void 0===a&&e.required
-&&!e.allowEmptyValue)throw new Error("Required parameter "+e.name+" is not provided");r&&r({req:h,parameter:e,value:a,operation:
-g,spec:t})}),h=p({request:h,securities:a,operation:g,spec:t}),(0,A.mergeInQueryOrForm)(h),h}
+,s=e.scheme,c=e.requestInterceptor,l=e.responseInterceptor,d=e.contextUrl;o=o||C;var h={url:f({spec:t,scheme:s,contextUrl:d}),credentials
+:"same-origin",headers:{}};if(c&&(h.requestInterceptor=c),l&&(h.responseInterceptor=l),!r)return h;var v=(0,E.getOperationRaw)(t
+,r),m=v.operation,g=void 0===m?{}:m,y=v.method,b=v.pathName;return h.url+=b,h.method=(""+y).toUpperCase(),n=n||{},i&&(h.headers.
+accept=i),u&&(h.headers["content-type"]=u),M(g.parameters).concat(M(t.paths[b].parameters)).forEach(function(e){var r=o[e.in],a=
+void 0;if("body"===e.in&&e.schema&&e.schema.properties&&(a=n),a=e&&e.name&&n[e.name],void 0!==e.default&&void 0===a&&(a=e.default
+),void 0===a&&e.required&&!e.allowEmptyValue)throw new Error("Required parameter "+e.name+" is not provided");r&&r({req:h,parameter
+:e,value:a,operation:g,spec:t})}),h=p({request:h,securities:a,operation:g,spec:t}),(0,A.mergeInQueryOrForm)(h),h}
 ```
 - example usage
 ```shell
 ...
-  securities,
-  requestContentType,
-  responseContentType
 }
 
 // Creates a request object compatible with HTTP client interface.
-// If 'pathName' and 'method', then those are used instead of operationId.
-const req = Swagger.buildRequest(...params)
-Swagger.execute({http, ...params})
+// If 'pathName' and 'method', then those are used instead of operationId. This is useful if you're using this dynamically, as '
+pathName' + 'method' are guarenteed to be unique.
+const res = Swagger.execute({...params})
+
+// You can also generate just the request ( without executing... )
+const req = Swagger.buildRequest({...params})
 '''
 
-Tags Interface
---------------
-A JS client for operations. We're currently using the 'apis[tag][operationId]:ExecuteFunction' interface, which can be disabled
-entirely using 'Swagger({disableInterfaces: true})' if you don't need it.
+Constructor and methods
+-----------------------
+
+Resolve the spec and expose some methods that use the resolved spec:
 ...
 ```
 
@@ -201,22 +204,22 @@ idFromPathMethod)(u,i)),t(j.buildRequest((0,m.default)({spec:n,operationId:a,par
 - example usage
 ```shell
 ...
-  requestContentType,
-  responseContentType
+  responseContentType,
+
+  (http), // You can also override the HTTP client completely
 }
 
 // Creates a request object compatible with HTTP client interface.
-// If 'pathName' and 'method', then those are used instead of operationId.
-const req = Swagger.buildRequest(...params)
-Swagger.execute({http, ...params})
+// If 'pathName' and 'method', then those are used instead of operationId. This is useful if you're using this dynamically, as '
+pathName' + 'method' are guarenteed to be unique.
+const res = Swagger.execute({...params})
+
+// You can also generate just the request ( without executing... )
+const req = Swagger.buildRequest({...params})
 '''
 
-Tags Interface
---------------
-A JS client for operations. We're currently using the 'apis[tag][operationId]:ExecuteFunction' interface, which can be disabled
-entirely using 'Swagger({disableInterfaces: true})' if you don't need it.
-
-OperationId's are meant to be unique within spec, if they're not we do the following:
+Constructor and methods
+-----------------------
 ...
 ```
 
@@ -230,19 +233,19 @@ function a(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};"o
 - example usage
 ```shell
 ...
-1. TryItOut Executor
-1. Tags Interface
-1. JS API
+- Swagger Spec Resolver ( OAS 2.0 ), which will use 'url' or 'spec' from the instance
+- TryItOut Executor, bound to the 'http' and 'spec' instance properties
+- Tags Interface, also bound to the instance
 
 HTTP Client
 -----------
 
-'Swagger.http(req)' exposes a [Fetch-like interface](https://github.com/matthew-andrews/isomorphic-fetch) with a tweak: allowing
- 'url' in the request object so that it can be passed around and mutated. It extends Fetch to support request and response interceptor
- and perform response & headers serialization. This method could be overridden to change how SwaggerJS performs HTTP requests.
+'Swagger.http(req)' exposes a [Fetch-like interface](https://github.com/matthew-andrews/isomorphic-fetch) with a twist: allowing
+ 'url' in the request object so that it can be passed around and mutated. It extends Fetch to support request and response interceptors
+ and performs response & header serialization. This method could be overridden to change how SwaggerJS performs HTTP requests.
 
 '''js
-// Fetch-like, but support 'url'
+// Fetch-like, but support 'url', 'query' and 'xxxInterceptor'
 const request = {
 url,
 query,
@@ -274,9 +277,9 @@ n/a
 #### <a name="apidoc.element.swagger-client.resolve"></a>[function <span class="apidocSignatureSpan">swagger-client.</span>resolve (e)](#apidoc.element.swagger-client.resolve)
 - description and source-code
 ```javascript
-function i(e){var t=e.http,r=e.fetch,n=e.spec,u=e.url,i=e.mode,o=e.allowMetaPatches,p=void 0===o||o;t=r||t||s.default,n?c.plugins
-.refs.docCache[u]=n:n={$ref:u},c.plugins.refs.fetchJSON=a(t);var d=[c.plugins.refs];return"strict"!==i&&d.push(c.plugins.allOf),(
-0,l.default)({spec:n,context:{baseDoc:u},plugins:d,allowMetaPatches:p}).then(f.normalizeSwagger)}
+function i(e){var t=e.http,r=e.fetch,n=e.spec,u=e.url,i=e.baseDoc,o=e.mode,p=e.allowMetaPatches,d=void 0===p||p;i=i||u,t=r||t||s
+.default,n?c.plugins.refs.docCache[i]=n:n={$ref:i},c.plugins.refs.fetchJSON=a(t);var h=[c.plugins.refs];return"strict"!==o&&h.push
+(c.plugins.allOf),(0,l.default)({spec:n,context:{baseDoc:i},plugins:h,allowMetaPatches:d}).then(f.normalizeSwagger)}
 ```
 - example usage
 ```shell
@@ -285,7 +288,7 @@ function i(e){var t=e.http,r=e.fetch,n=e.spec,u=e.url,i=e.mode,o=e.allowMetaPatc
 
 '''
 
-Swagger Spec Resolver
+Swagger Specification Resolver
 ---------------------
 
 'Swagger.resolve({url, spec, http})' resolves '$ref's (JSON-Refs) with the objects they point to.
@@ -310,12 +313,13 @@ function(e,r){void 0!==t[r]?(t[r]=Array.isArray(t[r])?t[r]:[t[r]],t[r].push(e)):
 n/a
 ```
 
-#### <a name="apidoc.element.swagger-client.serializeRes"></a>[function <span class="apidocSignatureSpan">swagger-client.</span>serializeRes (e, t, r)](#apidoc.element.swagger-client.serializeRes)
+#### <a name="apidoc.element.swagger-client.serializeRes"></a>[function <span class="apidocSignatureSpan">swagger-client.</span>serializeRes (e, t)](#apidoc.element.swagger-client.serializeRes)
 - description and source-code
 ```javascript
-function i(e, t, r){var n=r.loadSpec,a=void 0!==n&&n,i={ok:e.ok,url:e.url||t,status:e.status,statusText:e.statusText,headers:o(e.headers
-)},s=a||u(i.headers["content-type"]);return e[s?"text":"blob"]().then(function(e){if(i.text=e,i.data=e,s)try{var t=q.default.safeLoad
-(e);i.body=t,i.obj=t}catch(e){i.parseError=e}return i})}
+function i(e, t){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{},n=r.loadSpec,a=void 0!==n&&n,i={ok:e.ok,url:e.url
+||t,status:e.status,statusText:e.statusText,headers:o(e.headers)},s=a||u(i.headers["content-type"]);return(s?e.text:e.blob||e.buffer
+).call(e).then(function(e){if(i.text=e,i.data=e,s)try{var t=q.default.safeLoad(e);i.body=t,i.obj=t}catch(e){i.parseError=e}return
+ i})}
 ```
 - example usage
 ```shell

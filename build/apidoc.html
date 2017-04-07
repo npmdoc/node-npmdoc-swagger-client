@@ -49,7 +49,7 @@
 <h1>api documentation for
     <a
 
-    >swagger-client (v3.0.3)</a>
+    >swagger-client (v3.0.4)</a>
 </h1>
 <h4>SwaggerJS - a collection of interfaces for OAI specs</h4>
 <div class="apidocSectionDiv"><a
@@ -135,7 +135,7 @@
 
             <a class="apidocElementLiA" href="#apidoc.element.swagger-client.serializeRes">
             function <span class="apidocSignatureSpan">swagger-client.</span>serializeRes
-            <span class="apidocSignatureSpan">(e, t, r)</span>
+            <span class="apidocSignatureSpan">(e, t)</span>
             </a>
 
         </li>
@@ -211,29 +211,29 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function u(e){var t=e.spec,r=e.operationId,n=e.parameters,a=e.securities,u=e.requestContentType,i=e.responseContentType,o=e.parameterBuilders
-,s=e.scheme,c=e.requestInterceptor,l=e.responseInterceptor,d=e.contextUrl;o=o||C;var h={url:f({spec:t,scheme:s,contextUrl:d}),headers
-:{}};if(c&#x26;&#x26;(h.requestInterceptor=c),l&#x26;&#x26;(h.responseInterceptor=l),!r)return h;var v=(0,E.getOperationRaw)(t,r),m=v.operation,g=void
- 0===m?{}:m,y=v.method,b=v.pathName;return h.url+=b,h.method=(&#x22;&#x22;+y).toUpperCase(),n=n||{},i&#x26;&#x26;(h.headers.accept=i),u&#x26;&#x26;(h.headers[&#x22;
-content-type&#x22;]=u),M(g.parameters).concat(M(t.paths[b].parameters)).forEach(function(e){var r=o[e.in],a=void 0;if(&#x22;body&#x22;===e.in&#x26;&#x26;
-e.schema&#x26;&#x26;e.schema.properties&#x26;&#x26;(a=n),a=e&#x26;&#x26;e.name&#x26;&#x26;n[e.name],void 0!==e.default&#x26;&#x26;void 0===a&#x26;&#x26;(a=e.default),void 0===a&#x26;&#x26;e.required
-&#x26;&#x26;!e.allowEmptyValue)throw new Error(&#x22;Required parameter &#x22;+e.name+&#x22; is not provided&#x22;);r&#x26;&#x26;r({req:h,parameter:e,value:a,operation:
-g,spec:t})}),h=p({request:h,securities:a,operation:g,spec:t}),(0,A.mergeInQueryOrForm)(h),h}</pre></li>
+,s=e.scheme,c=e.requestInterceptor,l=e.responseInterceptor,d=e.contextUrl;o=o||C;var h={url:f({spec:t,scheme:s,contextUrl:d}),credentials
+:&#x22;same-origin&#x22;,headers:{}};if(c&#x26;&#x26;(h.requestInterceptor=c),l&#x26;&#x26;(h.responseInterceptor=l),!r)return h;var v=(0,E.getOperationRaw)(t
+,r),m=v.operation,g=void 0===m?{}:m,y=v.method,b=v.pathName;return h.url+=b,h.method=(&#x22;&#x22;+y).toUpperCase(),n=n||{},i&#x26;&#x26;(h.headers.
+accept=i),u&#x26;&#x26;(h.headers[&#x22;content-type&#x22;]=u),M(g.parameters).concat(M(t.paths[b].parameters)).forEach(function(e){var r=o[e.in],a=
+void 0;if(&#x22;body&#x22;===e.in&#x26;&#x26;e.schema&#x26;&#x26;e.schema.properties&#x26;&#x26;(a=n),a=e&#x26;&#x26;e.name&#x26;&#x26;n[e.name],void 0!==e.default&#x26;&#x26;void 0===a&#x26;&#x26;(a=e.default
+),void 0===a&#x26;&#x26;e.required&#x26;&#x26;!e.allowEmptyValue)throw new Error(&#x22;Required parameter &#x22;+e.name+&#x22; is not provided&#x22;);r&#x26;&#x26;r({req:h,parameter
+:e,value:a,operation:g,spec:t})}),h=p({request:h,securities:a,operation:g,spec:t}),(0,A.mergeInQueryOrForm)(h),h}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  securities,
-  requestContentType,
-  responseContentType
 }
 
 // Creates a request object compatible with HTTP client interface.
-// If `pathName` and `method`, then those are used instead of operationId.
-const req = Swagger.<span class="apidocCodeKeywordSpan">buildRequest</span>(...params)
-Swagger.execute({http, ...params})
+// If `pathName` and `method`, then those are used instead of operationId. This is useful if you&#x27;re using this dynamically,
+as `pathName` + `method` are guarenteed to be unique.
+const res = Swagger.execute({...params})
+
+// You can also generate just the request ( without executing... )
+const req = Swagger.<span class="apidocCodeKeywordSpan">buildRequest</span>({...params})
 ```
 
-Tags Interface
---------------
-A JS client for operations. We&#x27;re currently using the `apis[tag][operationId]:ExecuteFunction` interface, which can be disabled
- entirely using `Swagger({disableInterfaces: true})` if you don&#x27;t need it.
+Constructor and methods
+-----------------------
+
+Resolve the spec and expose some methods that use the resolved spec:
 ...</pre></li>
     </ul>
 
@@ -263,22 +263,22 @@ A JS client for operations. We&#x27;re currently using the `apis[tag][operationI
 )(e,[&#x22;http&#x22;,&#x22;fetch&#x22;,&#x22;spec&#x22;,&#x22;operationId&#x22;,&#x22;pathName&#x22;,&#x22;method&#x22;,&#x22;parameters&#x22;,&#x22;securities&#x22;]);return t=t||r||_.default,u&#x26;&#x26;i&#x26;&#x26;(a=(0,E.
 idFromPathMethod)(u,i)),t(j.buildRequest((0,m.default)({spec:n,operationId:a,parameters:o,securities:s},c)))}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  requestContentType,
-  responseContentType
+  responseContentType,
+
+  (http), // You can also override the HTTP client completely
 }
 
 // Creates a request object compatible with HTTP client interface.
-// If `pathName` and `method`, then those are used instead of operationId.
-const req = Swagger.buildRequest(...params)
-Swagger.<span class="apidocCodeKeywordSpan">execute</span>({http, ...params})
+// If `pathName` and `method`, then those are used instead of operationId. This is useful if you&#x27;re using this dynamically,
+as `pathName` + `method` are guarenteed to be unique.
+const res = Swagger.<span class="apidocCodeKeywordSpan">execute</span>({...params})
+
+// You can also generate just the request ( without executing... )
+const req = Swagger.buildRequest({...params})
 ```
 
-Tags Interface
---------------
-A JS client for operations. We&#x27;re currently using the `apis[tag][operationId]:ExecuteFunction` interface, which can be disabled
- entirely using `Swagger({disableInterfaces: true})` if you don&#x27;t need it.
-
-OperationId&#x27;s are meant to be unique within spec, if they&#x27;re not we do the following:
+Constructor and methods
+-----------------------
 ...</pre></li>
     </ul>
 
@@ -295,20 +295,20 @@ OperationId&#x27;s are meant to be unique within spec, if they&#x27;re not we do
 ))&#x26;&#x26;(t=e,e=t.url),t.headers=t.headers||{},A.mergeInQueryOrForm(t),t.requestInterceptor&#x26;&#x26;(t=t.requestInterceptor(t)||t);var r=t.headers
 [&#x22;content-type&#x22;]||t.headers[&#x22;Content-Type&#x22;];return/multipart\/form-data/i.test(r)&#x26;&#x26;(delete t.headers[&#x22;content-type&#x22;],delete t.headers[&#x22;Content-Type&#x22;]),(0,x.default)(t.url,t).then(function(r){return A.serializeRes(r,e,t).then(function(e){return t.responseInterceptor&#x26;&#x26;(e=t.responseInterceptor(e)||e),e})})}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-1. TryItOut Executor
-1. Tags Interface
-1. JS API
+- Swagger Spec Resolver ( OAS 2.0 ), which will use `url` or `spec` from the instance
+- TryItOut Executor, bound to the `http` and `spec` instance properties
+- Tags Interface, also bound to the instance
 
 HTTP Client
 -----------
 
 `Swagger.<span class="apidocCodeKeywordSpan">http</span>(req)` exposes a [Fetch-like interface](https://github.com/matthew-andrews
-/isomorphic-fetch) with a tweak: allowing `url` in the request object so that it can be passed around and mutated. It extends Fetch
- to support request and response interceptor and perform response &#x26; headers serialization. This method could be overridden
-to change how SwaggerJS performs HTTP requests.
+/isomorphic-fetch) with a twist: allowing `url` in the request object so that it can be passed around and mutated. It extends Fetch
+ to support request and response interceptors and performs response &#x26; header serialization. This method could be overridden
+ to change how SwaggerJS performs HTTP requests.
 
 ```js
-// Fetch-like, but support `url`
+// Fetch-like, but support `url`, `query` and `xxxInterceptor`
 const request = {
 url,
 query,
@@ -352,15 +352,15 @@ spec:e.spec,cb:t})}}</pre></li>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function i(e){var t=e.http,r=e.fetch,n=e.spec,u=e.url,i=e.mode,o=e.allowMetaPatches,p=void 0===o||o;t=r||t||s.default,n?c.plugins
-.refs.docCache[u]=n:n={$ref:u},c.plugins.refs.fetchJSON=a(t);var d=[c.plugins.refs];return&#x22;strict&#x22;!==i&#x26;&#x26;d.push(c.plugins.allOf),(
-0,l.default)({spec:n,context:{baseDoc:u},plugins:d,allowMetaPatches:p}).then(f.normalizeSwagger)}</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">function i(e){var t=e.http,r=e.fetch,n=e.spec,u=e.url,i=e.baseDoc,o=e.mode,p=e.allowMetaPatches,d=void 0===p||p;i=i||u,t=r||t||s
+.default,n?c.plugins.refs.docCache[i]=n:n={$ref:i},c.plugins.refs.fetchJSON=a(t);var h=[c.plugins.refs];return&#x22;strict&#x22;!==o&#x26;&#x26;h.push
+(c.plugins.allOf),(0,l.default)({spec:n,context:{baseDoc:i},plugins:h,allowMetaPatches:d}).then(f.normalizeSwagger)}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 })
 
 ```
 
-Swagger Spec Resolver
+Swagger Specification Resolver
 ---------------------
 
 `Swagger.<span class="apidocCodeKeywordSpan">resolve</span>({url, spec, http})` resolves `$ref`s (JSON-Refs) with the objects they
@@ -394,13 +394,14 @@ function(e,r){void 0!==t[r]?(t[r]=Array.isArray(t[r])?t[r]:[t[r]],t[r].push(e)):
     <h2>
         <a href="#apidoc.element.swagger-client.serializeRes" id="apidoc.element.swagger-client.serializeRes">
         function <span class="apidocSignatureSpan">swagger-client.</span>serializeRes
-        <span class="apidocSignatureSpan">(e, t, r)</span>
+        <span class="apidocSignatureSpan">(e, t)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function i(e, t, r){var n=r.loadSpec,a=void 0!==n&#x26;&#x26;n,i={ok:e.ok,url:e.url||t,status:e.status,statusText:e.statusText,headers:o(e.headers
-)},s=a||u(i.headers[&#x22;content-type&#x22;]);return e[s?&#x22;text&#x22;:&#x22;blob&#x22;]().then(function(e){if(i.text=e,i.data=e,s)try{var t=q.default.safeLoad
-(e);i.body=t,i.obj=t}catch(e){i.parseError=e}return i})}</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">function i(e, t){var r=arguments.length&#x3e;2&#x26;&#x26;void 0!==arguments[2]?arguments[2]:{},n=r.loadSpec,a=void 0!==n&#x26;&#x26;n,i={ok:e.ok,url:e.url
+||t,status:e.status,statusText:e.statusText,headers:o(e.headers)},s=a||u(i.headers[&#x22;content-type&#x22;]);return(s?e.text:e.blob||e.buffer
+).call(e).then(function(e){if(i.text=e,i.data=e,s)try{var t=q.default.safeLoad(e);i.body=t,i.obj=t}catch(e){i.parseError=e}return
+ i})}</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 

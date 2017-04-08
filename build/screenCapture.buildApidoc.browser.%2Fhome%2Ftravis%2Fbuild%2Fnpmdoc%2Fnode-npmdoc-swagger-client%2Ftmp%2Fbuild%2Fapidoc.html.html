@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,15 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-    >swagger-client (v3.0.5)</a>
+    <a>swagger-client (v3.0.5)</a>
 </h1>
 <h4>SwaggerJS - a collection of interfaces for OAI specs</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.swagger-client">module swagger-client</a><ol>
 
@@ -212,17 +207,17 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function u(e){var t=e.spec,r=e.operationId,n=e.parameters,a=e.securities,u=e.requestContentType,i=e.responseContentType,o=e.parameterBuilders
 ,s=e.scheme,c=e.requestInterceptor,l=e.responseInterceptor,d=e.contextUrl;o=o||C;var h={url:f({spec:t,scheme:s,contextUrl:d}),credentials
-:&#x22;same-origin&#x22;,headers:{}};if(c&#x26;&#x26;(h.requestInterceptor=c),l&#x26;&#x26;(h.responseInterceptor=l),!r)return h;var v=(0,E.getOperationRaw)(t
-,r),m=v.operation,y=void 0===m?{}:m,g=v.method,b=v.pathName;return h.url+=b,h.method=(&#x22;&#x22;+g).toUpperCase(),n=n||{},i&#x26;&#x26;(h.headers.
-accept=i),u&#x26;&#x26;(h.headers[&#x22;content-type&#x22;]=u),M(y.parameters).concat(M(t.paths[b].parameters)).forEach(function(e){var r=o[e.in],a=
-void 0;if(&#x22;body&#x22;===e.in&#x26;&#x26;e.schema&#x26;&#x26;e.schema.properties&#x26;&#x26;(a=n),a=e&#x26;&#x26;e.name&#x26;&#x26;n[e.name],void 0!==e.default&#x26;&#x26;void 0===a&#x26;&#x26;(a=e.default
-),void 0===a&#x26;&#x26;e.required&#x26;&#x26;!e.allowEmptyValue)throw new Error(&#x22;Required parameter &#x22;+e.name+&#x22; is not provided&#x22;);r&#x26;&#x26;r({req:h,parameter
+:"same-origin",headers:{}};if(c&amp;&amp;(h.requestInterceptor=c),l&amp;&amp;(h.responseInterceptor=l),!r)return h;var v=(0,E.getOperationRaw)(t
+,r),m=v.operation,y=void 0===m?{}:m,g=v.method,b=v.pathName;return h.url+=b,h.method=(""+g).toUpperCase(),n=n||{},i&amp;&amp;(h.headers.
+accept=i),u&amp;&amp;(h.headers["content-type"]=u),M(y.parameters).concat(M(t.paths[b].parameters)).forEach(function(e){var r=o[e.in],a=
+void 0;if("body"===e.in&amp;&amp;e.schema&amp;&amp;e.schema.properties&amp;&amp;(a=n),a=e&amp;&amp;e.name&amp;&amp;n[e.name],void 0!==e.default&amp;&amp;void 0===a&amp;&amp;(a=e.default
+),void 0===a&amp;&amp;e.required&amp;&amp;!e.allowEmptyValue)throw new Error("Required parameter "+e.name+" is not provided");r&amp;&amp;r({req:h,parameter
 :e,value:a,operation:y,spec:t})}),h=p({request:h,securities:a,operation:y,spec:t}),(0,A.mergeInQueryOrForm)(h),h}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 }
 
 // Creates a request object compatible with HTTP client interface.
-// If `pathName` and `method`, then those are used instead of operationId. This is useful if you&#x27;re using this dynamically,
+// If `pathName` and `method`, then those are used instead of operationId. This is useful if you're using this dynamically,
 as `pathName` + `method` are guarenteed to be unique.
 const res = Swagger.execute({...params})
 
@@ -260,7 +255,7 @@ Resolve the spec and expose some methods that use the resolved spec:
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function a(e){var t=e.http,r=e.fetch,n=e.spec,a=e.operationId,u=e.pathName,i=e.method,o=e.parameters,s=e.securities,c=(0,g.default
-)(e,[&#x22;http&#x22;,&#x22;fetch&#x22;,&#x22;spec&#x22;,&#x22;operationId&#x22;,&#x22;pathName&#x22;,&#x22;method&#x22;,&#x22;parameters&#x22;,&#x22;securities&#x22;]);return t=t||r||_.default,u&#x26;&#x26;i&#x26;&#x26;(a=(0,E.
+)(e,["http","fetch","spec","operationId","pathName","method","parameters","securities"]);return t=t||r||_.default,u&amp;&amp;i&amp;&amp;(a=(0,E.
 idFromPathMethod)(u,i)),t(j.buildRequest((0,m.default)({spec:n,operationId:a,parameters:o,securities:s},c)))}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
   responseContentType,
@@ -269,7 +264,7 @@ idFromPathMethod)(u,i)),t(j.buildRequest((0,m.default)({spec:n,operationId:a,par
 }
 
 // Creates a request object compatible with HTTP client interface.
-// If `pathName` and `method`, then those are used instead of operationId. This is useful if you&#x27;re using this dynamically,
+// If `pathName` and `method`, then those are used instead of operationId. This is useful if you're using this dynamically,
 as `pathName` + `method` are guarenteed to be unique.
 const res = Swagger.<span class="apidocCodeKeywordSpan">execute</span>({...params})
 
@@ -291,9 +286,9 @@ Constructor and methods
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function a(e){var t=arguments.length&#x3e;1&#x26;&#x26;void 0!==arguments[1]?arguments[1]:{};&#x22;object&#x22;===(void 0===e?&#x22;undefined&#x22;:(0,g.default)(e
-))&#x26;&#x26;(t=e,e=t.url),t.headers=t.headers||{},A.mergeInQueryOrForm(t),t.requestInterceptor&#x26;&#x26;(t=t.requestInterceptor(t)||t);var r=t.headers
-[&#x22;content-type&#x22;]||t.headers[&#x22;Content-Type&#x22;];return/multipart\/form-data/i.test(r)&#x26;&#x26;(delete t.headers[&#x22;content-type&#x22;],delete t.headers[&#x22;Content-Type&#x22;]),(0,x.default)(t.url,t).then(function(r){return A.serializeRes(r,e,t).then(function(e){return t.responseInterceptor&#x26;&#x26;(e=t.responseInterceptor(e)||e),e})})}</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">function a(e){var t=arguments.length&gt;1&amp;&amp;void 0!==arguments[1]?arguments[1]:{};"object"===(void 0===e?"undefined":(0,g.default)(e
+))&amp;&amp;(t=e,e=t.url),t.headers=t.headers||{},A.mergeInQueryOrForm(t),t.requestInterceptor&amp;&amp;(t=t.requestInterceptor(t)||t);var r=t.headers
+["content-type"]||t.headers["Content-Type"];return/multipart\/form-data/i.test(r)&amp;&amp;(delete t.headers["content-type"],delete t.headers["Content-Type"]),(0,x.default)(t.url,t).then(function(r){return A.serializeRes(r,e,t).then(function(e){return t.responseInterceptor&amp;&amp;(e=t.responseInterceptor(e)||e),e})})}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 - Swagger Spec Resolver ( OAS 2.0 ), which will use `url` or `spec` from the instance
 - TryItOut Executor, bound to the `http` and `spec` instance properties
@@ -304,7 +299,7 @@ HTTP Client
 
 `Swagger.<span class="apidocCodeKeywordSpan">http</span>(req)` exposes a [Fetch-like interface](https://github.com/matthew-andrews
 /isomorphic-fetch) with a twist: allowing `url` in the request object so that it can be passed around and mutated. It extends Fetch
- to support request and response interceptors and performs response &#x26; header serialization. This method could be overridden
+ to support request and response interceptors and performs response &amp; header serialization. This method could be overridden
  to change how SwaggerJS performs HTTP requests.
 
 ```js
@@ -325,7 +320,7 @@ method,
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function i(){var e=arguments.length&#x3e;0&#x26;&#x26;void 0!==arguments[0]?arguments[0]:{},t=v.makeExecute(e);return{apis:v.mapTagOperations({
+    <li>description and source-code<pre class="apidocCodePre">function i(){var e=arguments.length&gt;0&amp;&amp;void 0!==arguments[0]?arguments[0]:{},t=v.makeExecute(e);return{apis:v.mapTagOperations({
 spec:e.spec,cb:t})}}</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -353,7 +348,7 @@ spec:e.spec,cb:t})}}</pre></li>
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function i(e){var t=e.http,r=e.fetch,n=e.spec,u=e.url,i=e.baseDoc,o=e.mode,p=e.allowMetaPatches,d=void 0===p||p;i=i||u,t=r||t||s
-.default,n?c.plugins.refs.docCache[i]=n:n={$ref:i},c.plugins.refs.fetchJSON=a(t);var h=[c.plugins.refs];return&#x22;strict&#x22;!==o&#x26;&#x26;h.push
+.default,n?c.plugins.refs.docCache[i]=n:n={$ref:i},c.plugins.refs.fetchJSON=a(t);var h=[c.plugins.refs];return"strict"!==o&amp;&amp;h.push
 (c.plugins.allOf),(0,l.default)({spec:n,context:{baseDoc:i},plugins:h,allowMetaPatches:d}).then(f.normalizeSwagger)}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 })
@@ -368,7 +363,7 @@ Swagger Specification Resolver
 
 ```js
 
-Swagger.resolve({url, spec, http}).then((resolved) =&#x3e; {
+Swagger.resolve({url, spec, http}).then((resolved) =&gt; {
   resolved.errors // resolution errors, if any
   resolved.spec   // the resolved spec
 })
@@ -384,7 +379,7 @@ Swagger.resolve({url, spec, http}).then((resolved) =&#x3e; {
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function o(){var e=arguments.length&#x3e;0&#x26;&#x26;void 0!==arguments[0]?arguments[0]:{},t={};return&#x22;function&#x22;==typeof e.forEach?(e.forEach(
+    <li>description and source-code<pre class="apidocCodePre">function o(){var e=arguments.length&gt;0&amp;&amp;void 0!==arguments[0]?arguments[0]:{},t={};return"function"==typeof e.forEach?(e.forEach(
 function(e,r){void 0!==t[r]?(t[r]=Array.isArray(t[r])?t[r]:[t[r]],t[r].push(e)):t[r]=e}),t):t}</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -398,8 +393,8 @@ function(e,r){void 0!==t[r]?(t[r]=Array.isArray(t[r])?t[r]:[t[r]],t[r].push(e)):
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function i(e, t){var r=arguments.length&#x3e;2&#x26;&#x26;void 0!==arguments[2]?arguments[2]:{},n=r.loadSpec,a=void 0!==n&#x26;&#x26;n,i={ok:e.ok,url:e.url
-||t,status:e.status,statusText:e.statusText,headers:o(e.headers)},s=a||u(i.headers[&#x22;content-type&#x22;]);return(s?e.text:e.blob||e.buffer
+    <li>description and source-code<pre class="apidocCodePre">function i(e, t){var r=arguments.length&gt;2&amp;&amp;void 0!==arguments[2]?arguments[2]:{},n=r.loadSpec,a=void 0!==n&amp;&amp;n,i={ok:e.ok,url:e.url
+||t,status:e.status,statusText:e.statusText,headers:o(e.headers)},s=a||u(i.headers["content-type"]);return(s?e.text:e.blob||e.buffer
 ).call(e).then(function(e){if(i.text=e,i.data=e,s)try{var t=q.default.safeLoad(e);i.body=t,i.obj=t}catch(e){i.parseError=e}return
  i})}</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -434,7 +429,7 @@ function(e,r){void 0!==t[r]?(t[r]=Array.isArray(t[r])?t[r]:[t[r]],t[r].push(e)):
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function o(e){var t=e.req,r=e.value,n=e.parameter;t.form=t.form||{},(r||n.allowEmptyValue)&#x26;&#x26;(t.form[n.name]={value:r,allowEmptyValue
+    <li>description and source-code<pre class="apidocCodePre">function o(e){var t=e.req,r=e.value,n=e.parameter;t.form=t.form||{},(r||n.allowEmptyValue)&amp;&amp;(t.form[n.name]={value:r,allowEmptyValue
 :n.allowEmptyValue,collectionFormat:n.collectionFormat})}</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -448,7 +443,7 @@ function(e,r){void 0!==t[r]?(t[r]=Array.isArray(t[r])?t[r]:[t[r]],t[r].push(e)):
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function s(e){var t=e.req,r=e.parameter,n=e.value;t.headers=t.headers||{},void 0!==n&#x26;&#x26;(t.headers[r.name]=n)}</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">function s(e){var t=e.req,r=e.parameter,n=e.value;t.headers=t.headers||{},void 0!==n&amp;&amp;(t.headers[r.name]=n)}</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -461,7 +456,7 @@ function(e,r){void 0!==t[r]?(t[r]=Array.isArray(t[r])?t[r]:[t[r]],t[r].push(e)):
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function c(e){var t=e.req,r=e.value,n=e.parameter;t.url=t.url.replace(&#x22;{&#x22;+n.name+&#x22;}&#x22;,encodeURIComponent(r))}</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">function c(e){var t=e.req,r=e.value,n=e.parameter;t.url=t.url.replace("{"+n.name+"}",encodeURIComponent(r))}</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -488,3 +483,4 @@ value:r};else if(n.allowEmptyValue){var a=n.name;t.query[a]=t.query[a]||{},t.que
     ]
 </div>
 </div>
+</body></html>

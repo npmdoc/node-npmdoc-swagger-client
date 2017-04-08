@@ -49,7 +49,7 @@
 <h1>api documentation for
     <a
 
-    >swagger-client (v3.0.4)</a>
+    >swagger-client (v3.0.5)</a>
 </h1>
 <h4>SwaggerJS - a collection of interfaces for OAI specs</h4>
 <div class="apidocSectionDiv"><a
@@ -213,11 +213,11 @@
     <li>description and source-code<pre class="apidocCodePre">function u(e){var t=e.spec,r=e.operationId,n=e.parameters,a=e.securities,u=e.requestContentType,i=e.responseContentType,o=e.parameterBuilders
 ,s=e.scheme,c=e.requestInterceptor,l=e.responseInterceptor,d=e.contextUrl;o=o||C;var h={url:f({spec:t,scheme:s,contextUrl:d}),credentials
 :&#x22;same-origin&#x22;,headers:{}};if(c&#x26;&#x26;(h.requestInterceptor=c),l&#x26;&#x26;(h.responseInterceptor=l),!r)return h;var v=(0,E.getOperationRaw)(t
-,r),m=v.operation,g=void 0===m?{}:m,y=v.method,b=v.pathName;return h.url+=b,h.method=(&#x22;&#x22;+y).toUpperCase(),n=n||{},i&#x26;&#x26;(h.headers.
-accept=i),u&#x26;&#x26;(h.headers[&#x22;content-type&#x22;]=u),M(g.parameters).concat(M(t.paths[b].parameters)).forEach(function(e){var r=o[e.in],a=
+,r),m=v.operation,y=void 0===m?{}:m,g=v.method,b=v.pathName;return h.url+=b,h.method=(&#x22;&#x22;+g).toUpperCase(),n=n||{},i&#x26;&#x26;(h.headers.
+accept=i),u&#x26;&#x26;(h.headers[&#x22;content-type&#x22;]=u),M(y.parameters).concat(M(t.paths[b].parameters)).forEach(function(e){var r=o[e.in],a=
 void 0;if(&#x22;body&#x22;===e.in&#x26;&#x26;e.schema&#x26;&#x26;e.schema.properties&#x26;&#x26;(a=n),a=e&#x26;&#x26;e.name&#x26;&#x26;n[e.name],void 0!==e.default&#x26;&#x26;void 0===a&#x26;&#x26;(a=e.default
 ),void 0===a&#x26;&#x26;e.required&#x26;&#x26;!e.allowEmptyValue)throw new Error(&#x22;Required parameter &#x22;+e.name+&#x22; is not provided&#x22;);r&#x26;&#x26;r({req:h,parameter
-:e,value:a,operation:g,spec:t})}),h=p({request:h,securities:a,operation:g,spec:t}),(0,A.mergeInQueryOrForm)(h),h}</pre></li>
+:e,value:a,operation:y,spec:t})}),h=p({request:h,securities:a,operation:y,spec:t}),(0,A.mergeInQueryOrForm)(h),h}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 }
 
@@ -259,7 +259,7 @@ Resolve the spec and expose some methods that use the resolved spec:
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function a(e){var t=e.http,r=e.fetch,n=e.spec,a=e.operationId,u=e.pathName,i=e.method,o=e.parameters,s=e.securities,c=(0,y.default
+    <li>description and source-code<pre class="apidocCodePre">function a(e){var t=e.http,r=e.fetch,n=e.spec,a=e.operationId,u=e.pathName,i=e.method,o=e.parameters,s=e.securities,c=(0,g.default
 )(e,[&#x22;http&#x22;,&#x22;fetch&#x22;,&#x22;spec&#x22;,&#x22;operationId&#x22;,&#x22;pathName&#x22;,&#x22;method&#x22;,&#x22;parameters&#x22;,&#x22;securities&#x22;]);return t=t||r||_.default,u&#x26;&#x26;i&#x26;&#x26;(a=(0,E.
 idFromPathMethod)(u,i)),t(j.buildRequest((0,m.default)({spec:n,operationId:a,parameters:o,securities:s},c)))}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -291,7 +291,7 @@ Constructor and methods
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function a(e){var t=arguments.length&#x3e;1&#x26;&#x26;void 0!==arguments[1]?arguments[1]:{};&#x22;object&#x22;===(void 0===e?&#x22;undefined&#x22;:(0,y.default)(e
+    <li>description and source-code<pre class="apidocCodePre">function a(e){var t=arguments.length&#x3e;1&#x26;&#x26;void 0!==arguments[1]?arguments[1]:{};&#x22;object&#x22;===(void 0===e?&#x22;undefined&#x22;:(0,g.default)(e
 ))&#x26;&#x26;(t=e,e=t.url),t.headers=t.headers||{},A.mergeInQueryOrForm(t),t.requestInterceptor&#x26;&#x26;(t=t.requestInterceptor(t)||t);var r=t.headers
 [&#x22;content-type&#x22;]||t.headers[&#x22;Content-Type&#x22;];return/multipart\/form-data/i.test(r)&#x26;&#x26;(delete t.headers[&#x22;content-type&#x22;],delete t.headers[&#x22;Content-Type&#x22;]),(0,x.default)(t.url,t).then(function(r){return A.serializeRes(r,e,t).then(function(e){return t.responseInterceptor&#x26;&#x26;(e=t.responseInterceptor(e)||e),e})})}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -448,7 +448,7 @@ function(e,r){void 0!==t[r]?(t[r]=Array.isArray(t[r])?t[r]:[t[r]],t[r].push(e)):
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function s(e){var t=e.req,r=e.parameter,n=e.value;t.headers=t.headers||{},t.headers[r.name]=n}</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">function s(e){var t=e.req,r=e.parameter,n=e.value;t.headers=t.headers||{},void 0!==n&#x26;&#x26;(t.headers[r.name]=n)}</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 

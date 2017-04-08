@@ -1,9 +1,9 @@
-# api documentation for  swagger-client (v3.0.4)  [![npm package](https://img.shields.io/npm/v/npmdoc-swagger-client.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-swagger-client) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-swagger-client.svg)](https://travis-ci.org/npmdoc/node-npmdoc-swagger-client)
+# api documentation for  swagger-client (v3.0.5)  [![npm package](https://img.shields.io/npm/v/npmdoc-swagger-client.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-swagger-client) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-swagger-client.svg)](https://travis-ci.org/npmdoc/node-npmdoc-swagger-client)
 #### SwaggerJS - a collection of interfaces for OAI specs
 
 [![NPM](https://nodei.co/npm/swagger-client.png?downloads=true)](https://www.npmjs.com/package/swagger-client)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-swagger-client/build/screenCapture.buildNpmdoc.browser.%2Fhome%2Ftravis%2Fbuild%2Fnpmdoc%2Fnode-npmdoc-swagger-client%2Ftmp%2Fbuild%2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-swagger-client/build/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-swagger-client/build/screenCapture.buildNpmdoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-swagger-client%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-swagger-client/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-swagger-client/build/screenCapture.npmPackageListing.svg)
 
@@ -83,10 +83,10 @@
     },
     "directories": {},
     "dist": {
-        "shasum": "25a797e207001135d554c1b1164e36b1cb35948c",
-        "tarball": "https://registry.npmjs.org/swagger-client/-/swagger-client-3.0.4.tgz"
+        "shasum": "7b1c1a1447ac6c8c594c942a04485e85f9c72ba4",
+        "tarball": "https://registry.npmjs.org/swagger-client/-/swagger-client-3.0.5.tgz"
     },
-    "gitHead": "9f5c66da8054f1e79f80ef1ae3eefc1c2837bee6",
+    "gitHead": "3e81f635c258b91e4544e414a2cd90e36d79e010",
     "keywords": [
         "oai",
         "swagger",
@@ -120,7 +120,7 @@
         "test:watch": "npm run test -- -w",
         "watch": "webpack --config webpack.config.js --watch --progress"
     },
-    "version": "3.0.4"
+    "version": "3.0.5"
 }
 ```
 
@@ -157,11 +157,11 @@
 function u(e){var t=e.spec,r=e.operationId,n=e.parameters,a=e.securities,u=e.requestContentType,i=e.responseContentType,o=e.parameterBuilders
 ,s=e.scheme,c=e.requestInterceptor,l=e.responseInterceptor,d=e.contextUrl;o=o||C;var h={url:f({spec:t,scheme:s,contextUrl:d}),credentials
 :"same-origin",headers:{}};if(c&&(h.requestInterceptor=c),l&&(h.responseInterceptor=l),!r)return h;var v=(0,E.getOperationRaw)(t
-,r),m=v.operation,g=void 0===m?{}:m,y=v.method,b=v.pathName;return h.url+=b,h.method=(""+y).toUpperCase(),n=n||{},i&&(h.headers.
-accept=i),u&&(h.headers["content-type"]=u),M(g.parameters).concat(M(t.paths[b].parameters)).forEach(function(e){var r=o[e.in],a=
+,r),m=v.operation,y=void 0===m?{}:m,g=v.method,b=v.pathName;return h.url+=b,h.method=(""+g).toUpperCase(),n=n||{},i&&(h.headers.
+accept=i),u&&(h.headers["content-type"]=u),M(y.parameters).concat(M(t.paths[b].parameters)).forEach(function(e){var r=o[e.in],a=
 void 0;if("body"===e.in&&e.schema&&e.schema.properties&&(a=n),a=e&&e.name&&n[e.name],void 0!==e.default&&void 0===a&&(a=e.default
 ),void 0===a&&e.required&&!e.allowEmptyValue)throw new Error("Required parameter "+e.name+" is not provided");r&&r({req:h,parameter
-:e,value:a,operation:g,spec:t})}),h=p({request:h,securities:a,operation:g,spec:t}),(0,A.mergeInQueryOrForm)(h),h}
+:e,value:a,operation:y,spec:t})}),h=p({request:h,securities:a,operation:y,spec:t}),(0,A.mergeInQueryOrForm)(h),h}
 ```
 - example usage
 ```shell
@@ -197,7 +197,7 @@ n/a
 #### <a name="apidoc.element.swagger-client.execute"></a>[function <span class="apidocSignatureSpan">swagger-client.</span>execute (e)](#apidoc.element.swagger-client.execute)
 - description and source-code
 ```javascript
-function a(e){var t=e.http,r=e.fetch,n=e.spec,a=e.operationId,u=e.pathName,i=e.method,o=e.parameters,s=e.securities,c=(0,y.default
+function a(e){var t=e.http,r=e.fetch,n=e.spec,a=e.operationId,u=e.pathName,i=e.method,o=e.parameters,s=e.securities,c=(0,g.default
 )(e,["http","fetch","spec","operationId","pathName","method","parameters","securities"]);return t=t||r||_.default,u&&i&&(a=(0,E.
 idFromPathMethod)(u,i)),t(j.buildRequest((0,m.default)({spec:n,operationId:a,parameters:o,securities:s},c)))}
 ```
@@ -226,7 +226,7 @@ Constructor and methods
 #### <a name="apidoc.element.swagger-client.http"></a>[function <span class="apidocSignatureSpan">swagger-client.</span>http (e)](#apidoc.element.swagger-client.http)
 - description and source-code
 ```javascript
-function a(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};"object"===(void 0===e?"undefined":(0,y.default)(e
+function a(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};"object"===(void 0===e?"undefined":(0,g.default)(e
 ))&&(t=e,e=t.url),t.headers=t.headers||{},A.mergeInQueryOrForm(t),t.requestInterceptor&&(t=t.requestInterceptor(t)||t);var r=t.headers
 ["content-type"]||t.headers["Content-Type"];return/multipart\/form-data/i.test(r)&&(delete t.headers["content-type"],delete t.headers["Content-Type"]),(0,x.default)(t.url,t).then(function(r){return A.serializeRes(r,e,t).then(function(e){return t.responseInterceptor&&(e=t.responseInterceptor(e)||e),e})})}
 ```
@@ -354,7 +354,7 @@ n/a
 #### <a name="apidoc.element.swagger-client.parameterBuilders.header"></a>[function <span class="apidocSignatureSpan">swagger-client.parameterBuilders.</span>header (e)](#apidoc.element.swagger-client.parameterBuilders.header)
 - description and source-code
 ```javascript
-function s(e){var t=e.req,r=e.parameter,n=e.value;t.headers=t.headers||{},t.headers[r.name]=n}
+function s(e){var t=e.req,r=e.parameter,n=e.value;t.headers=t.headers||{},void 0!==n&&(t.headers[r.name]=n)}
 ```
 - example usage
 ```shell

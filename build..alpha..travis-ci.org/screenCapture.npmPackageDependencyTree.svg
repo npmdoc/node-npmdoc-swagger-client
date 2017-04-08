@@ -4,7 +4,7 @@
 <tspan x="10" y="26">47 megabytes installed</tspan>
 <tspan x="10" y="42"></tspan>
 <tspan x="10" y="58">node_modules</tspan>
-<tspan x="10" y="74">└─┬ swagger-client@3.0.4 </tspan>
+<tspan x="10" y="74">└─┬ swagger-client@3.0.5 </tspan>
 <tspan x="10" y="90">  ├─┬ babel-runtime@6.23.0 </tspan>
 <tspan x="10" y="106">  │ ├── core-js@2.4.1 </tspan>
 <tspan x="10" y="122">  │ └── regenerator-runtime@0.10.3 </tspan>
@@ -176,7 +176,7 @@
 <tspan x="10" y="2778">  │ │   │ ├─┬ form-data@2.1.2 </tspan>
 <tspan x="10" y="2794">  │ │   │ │ └── asynckit@0.4.0 </tspan>
 <tspan x="10" y="2810">  │ │   │ ├─┬ har-validator@4.2.1 </tspan>
-<tspan x="10" y="2826">  │ │   │ │ ├─┬ ajv@4.11.5 </tspan>
+<tspan x="10" y="2826">  │ │   │ │ ├─┬ ajv@4.11.6 </tspan>
 <tspan x="10" y="2842">  │ │   │ │ │ ├── co@4.6.0 </tspan>
 <tspan x="10" y="2858">  │ │   │ │ │ └─┬ json-stable-stringify@1.0.1 </tspan>
 <tspan x="10" y="2874">  │ │   │ │ │   └── jsonify@0.0.0 </tspan>

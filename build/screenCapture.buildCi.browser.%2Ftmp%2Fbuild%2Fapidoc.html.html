@@ -47,12 +47,21 @@
 }
 </style>
 <h1>api documentation for
-    <a>swagger-client (v3.0.5)</a>
+    <a>swagger-client (v3.0.6)</a>
 </h1>
 <h4>SwaggerJS - a collection of interfaces for OAI specs</h4>
 <div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.swagger-client">module swagger-client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-client.swagger-client">
+            function <span class="apidocSignatureSpan"></span>swagger-client
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
 
         <li>
 
@@ -199,6 +208,21 @@
 
 
     <h2>
+        <a href="#apidoc.element.swagger-client.swagger-client" id="apidoc.element.swagger-client.swagger-client">
+        function <span class="apidocSignatureSpan"></span>swagger-client
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function a(e){var t=this,r=arguments.length&gt;1&amp;&amp;void 0!==arguments[1]?arguments[1]:{};if("string"==typeof e?r.url=e:r=e,!(this instanceof
+ a))return new a(r);(0,c.default)(this,r);var n=this.resolve().then(function(){return t.disableInterfaces||(0,c.default)(t,a.makeApisTagOperation
+(t)),t});return n.client=this,n}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.swagger-client.buildRequest" id="apidoc.element.swagger-client.buildRequest">
         function <span class="apidocSignatureSpan">swagger-client.</span>buildRequest
         <span class="apidocSignatureSpan">(e)</span>
@@ -212,7 +236,7 @@
 accept=i),u&amp;&amp;(h.headers["content-type"]=u),M(y.parameters).concat(M(t.paths[b].parameters)).forEach(function(e){var r=o[e.in],a=
 void 0;if("body"===e.in&amp;&amp;e.schema&amp;&amp;e.schema.properties&amp;&amp;(a=n),a=e&amp;&amp;e.name&amp;&amp;n[e.name],void 0!==e.default&amp;&amp;void 0===a&amp;&amp;(a=e.default
 ),void 0===a&amp;&amp;e.required&amp;&amp;!e.allowEmptyValue)throw new Error("Required parameter "+e.name+" is not provided");r&amp;&amp;r({req:h,parameter
-:e,value:a,operation:y,spec:t})}),h=p({request:h,securities:a,operation:y,spec:t}),(0,A.mergeInQueryOrForm)(h),h}</pre></li>
+:e,value:a,operation:y,spec:t})}),h=p({request:h,securities:a,operation:y,spec:t}),(0,O.mergeInQueryOrForm)(h),h}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 }
 
@@ -286,9 +310,8 @@ Constructor and methods
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function a(e){var t=arguments.length&gt;1&amp;&amp;void 0!==arguments[1]?arguments[1]:{};"object"===(void 0===e?"undefined":(0,g.default)(e
-))&amp;&amp;(t=e,e=t.url),t.headers=t.headers||{},A.mergeInQueryOrForm(t),t.requestInterceptor&amp;&amp;(t=t.requestInterceptor(t)||t);var r=t.headers
-["content-type"]||t.headers["Content-Type"];return/multipart\/form-data/i.test(r)&amp;&amp;(delete t.headers["content-type"],delete t.headers["Content-Type"]),(0,x.default)(t.url,t).then(function(r){return A.serializeRes(r,e,t).then(function(e){return t.responseInterceptor&amp;&amp;(e=t.responseInterceptor(e)||e),e})})}</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">function a(e){var t=arguments.length&gt;1&amp;&amp;void 0!==arguments[1]?arguments[1]:{};return"object"===(void 0===e?"undefined":(0,g.default
+)(e))&amp;&amp;(t=e,e=t.url),t.headers=t.headers||{},O.mergeInQueryOrForm(t),t.requestInterceptor&amp;&amp;(t=t.requestInterceptor(t)||t),/multipart\/form-data/i.test(t.headers["content-type"]||t.headers["Content-Type"])&amp;&amp;(delete t.headers["content-type"],delete t.headers["Content-Type"]),(0,P.default)(t.url,t).then(function(r){return O.serializeRes(r,e,t).then(function(e){return t.responseInterceptor&amp;&amp;(e=t.responseInterceptor(e)||e),e})})}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 - Swagger Spec Resolver ( OAS 2.0 ), which will use `url` or `spec` from the instance
 - TryItOut Executor, bound to the `http` and `spec` instance properties

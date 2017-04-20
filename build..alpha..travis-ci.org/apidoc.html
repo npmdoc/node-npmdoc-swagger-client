@@ -49,7 +49,7 @@
 <h1>api documentation for
     <a
 
-    >swagger-client (v3.0.5)</a>
+    >swagger-client (v3.0.6)</a>
 </h1>
 <h4>SwaggerJS - a collection of interfaces for OAI specs</h4>
 <div class="apidocSectionDiv"><a
@@ -58,6 +58,15 @@
 ><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.swagger-client">module swagger-client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.swagger-client.swagger-client">
+            function <span class="apidocSignatureSpan"></span>swagger-client
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
 
         <li>
 
@@ -204,6 +213,21 @@
 
 
     <h2>
+        <a href="#apidoc.element.swagger-client.swagger-client" id="apidoc.element.swagger-client.swagger-client">
+        function <span class="apidocSignatureSpan"></span>swagger-client
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function a(e){var t=this,r=arguments.length&#x3e;1&#x26;&#x26;void 0!==arguments[1]?arguments[1]:{};if(&#x22;string&#x22;==typeof e?r.url=e:r=e,!(this instanceof
+ a))return new a(r);(0,c.default)(this,r);var n=this.resolve().then(function(){return t.disableInterfaces||(0,c.default)(t,a.makeApisTagOperation
+(t)),t});return n.client=this,n}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.swagger-client.buildRequest" id="apidoc.element.swagger-client.buildRequest">
         function <span class="apidocSignatureSpan">swagger-client.</span>buildRequest
         <span class="apidocSignatureSpan">(e)</span>
@@ -217,7 +241,7 @@
 accept=i),u&#x26;&#x26;(h.headers[&#x22;content-type&#x22;]=u),M(y.parameters).concat(M(t.paths[b].parameters)).forEach(function(e){var r=o[e.in],a=
 void 0;if(&#x22;body&#x22;===e.in&#x26;&#x26;e.schema&#x26;&#x26;e.schema.properties&#x26;&#x26;(a=n),a=e&#x26;&#x26;e.name&#x26;&#x26;n[e.name],void 0!==e.default&#x26;&#x26;void 0===a&#x26;&#x26;(a=e.default
 ),void 0===a&#x26;&#x26;e.required&#x26;&#x26;!e.allowEmptyValue)throw new Error(&#x22;Required parameter &#x22;+e.name+&#x22; is not provided&#x22;);r&#x26;&#x26;r({req:h,parameter
-:e,value:a,operation:y,spec:t})}),h=p({request:h,securities:a,operation:y,spec:t}),(0,A.mergeInQueryOrForm)(h),h}</pre></li>
+:e,value:a,operation:y,spec:t})}),h=p({request:h,securities:a,operation:y,spec:t}),(0,O.mergeInQueryOrForm)(h),h}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 }
 
@@ -291,9 +315,8 @@ Constructor and methods
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function a(e){var t=arguments.length&#x3e;1&#x26;&#x26;void 0!==arguments[1]?arguments[1]:{};&#x22;object&#x22;===(void 0===e?&#x22;undefined&#x22;:(0,g.default)(e
-))&#x26;&#x26;(t=e,e=t.url),t.headers=t.headers||{},A.mergeInQueryOrForm(t),t.requestInterceptor&#x26;&#x26;(t=t.requestInterceptor(t)||t);var r=t.headers
-[&#x22;content-type&#x22;]||t.headers[&#x22;Content-Type&#x22;];return/multipart\/form-data/i.test(r)&#x26;&#x26;(delete t.headers[&#x22;content-type&#x22;],delete t.headers[&#x22;Content-Type&#x22;]),(0,x.default)(t.url,t).then(function(r){return A.serializeRes(r,e,t).then(function(e){return t.responseInterceptor&#x26;&#x26;(e=t.responseInterceptor(e)||e),e})})}</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">function a(e){var t=arguments.length&#x3e;1&#x26;&#x26;void 0!==arguments[1]?arguments[1]:{};return&#x22;object&#x22;===(void 0===e?&#x22;undefined&#x22;:(0,g.default
+)(e))&#x26;&#x26;(t=e,e=t.url),t.headers=t.headers||{},O.mergeInQueryOrForm(t),t.requestInterceptor&#x26;&#x26;(t=t.requestInterceptor(t)||t),/multipart\/form-data/i.test(t.headers[&#x22;content-type&#x22;]||t.headers[&#x22;Content-Type&#x22;])&#x26;&#x26;(delete t.headers[&#x22;content-type&#x22;],delete t.headers[&#x22;Content-Type&#x22;]),(0,P.default)(t.url,t).then(function(r){return O.serializeRes(r,e,t).then(function(e){return t.responseInterceptor&#x26;&#x26;(e=t.responseInterceptor(e)||e),e})})}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 - Swagger Spec Resolver ( OAS 2.0 ), which will use `url` or `spec` from the instance
 - TryItOut Executor, bound to the `http` and `spec` instance properties
